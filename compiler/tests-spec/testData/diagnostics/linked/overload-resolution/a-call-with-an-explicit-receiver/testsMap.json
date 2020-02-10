@@ -1,0 +1,14 @@
+{
+  "7": {
+    "pos": {
+      "1": [
+        {
+          "specVersion": "0.1-253",
+          "casesNumber": 4,
+          "description": "sets of non-extension member callables only",
+          "unexpectedBehaviour": false
+        }
+      ]
+    }
+  }
+}
