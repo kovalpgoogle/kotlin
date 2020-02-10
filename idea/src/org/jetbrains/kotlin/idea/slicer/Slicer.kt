@@ -250,7 +250,7 @@ class InflowSlicer(
         }
     }
 
-    private fun KtParameter.processParameter() {
+    private fun KtParameter.processParameter(includeOverriders: Boolean) {
         if (!canProcess()) return
 
         val function = ownerFunction ?: return
@@ -273,7 +273,7 @@ class InflowSlicer(
 
         val parameterDescriptor = resolveToParameterDescriptorIfAny(BodyResolveMode.FULL) ?: return
 
-        (function as? KtFunction)?.processCalls(parentUsage.scope.toSearchScope(), includeOverriders = true) body@{
+        (function as? KtFunction)?.processCalls(parentUsage.scope.toSearchScope(), includeOverriders) body@{
             val refElement = it.element ?: return@body
             val refParent = refElement.parent
 
@@ -395,7 +395,8 @@ class InflowSlicer(
 
         when (element) {
             is KtProperty -> element.processProperty()
-            is KtParameter -> element.processParameter()
+            // for parameter, we include overriders only when the feature is invoked on parameter itself
+            is KtParameter -> element.processParameter(includeOverriders = parentUsage.parent == null)
             is KtDeclarationWithBody -> element.processFunction()
             else -> element.processExpression()
         }
