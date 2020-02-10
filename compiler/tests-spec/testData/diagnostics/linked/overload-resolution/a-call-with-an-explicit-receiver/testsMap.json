@@ -1,10 +1,42 @@
 {
   "7": {
     "pos": {
+      "2": [
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 2,
+          "description": "The sets of local extension callables",
+          "unexpectedBehaviour": false
+        },
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "extension calls with explicit and implicit receiver",
+          "unexpectedBehaviour": true
+        }
+      ],
       "1": [
         {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "sets of non-extension member callables only",
+          "unexpectedBehaviour": false
+        },
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "set of non-extension member callables only",
+          "unexpectedBehaviour": false
+        },
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "set of non-extension member callables only",
+          "unexpectedBehaviour": false
+        },
+        {
           "specVersion": "0.1-253",
-          "casesNumber": 4,
+          "casesNumber": 6,
           "description": "sets of non-extension member callables only",
           "unexpectedBehaviour": false
         }

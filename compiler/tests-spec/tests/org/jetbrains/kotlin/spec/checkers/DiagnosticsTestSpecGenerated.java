@@ -3606,6 +3606,31 @@ public class DiagnosticsTestSpecGenerated extends AbstractDiagnosticsTestSpec {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.1.kt");
                         }
 
+                        @TestMetadata("1.2.kt")
+                        public void test1_2() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.2.kt");
+                        }
+
+                        @TestMetadata("1.3.kt")
+                        public void test1_3() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.3.kt");
+                        }
+
+                        @TestMetadata("1.4.kt")
+                        public void test1_4() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.4.kt");
+                        }
+
+                        @TestMetadata("2.1.kt")
+                        public void test2_1() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/2.1.kt");
+                        }
+
+                        @TestMetadata("2.2.kt")
+                        public void test2_2() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/2.2.kt");
+                        }
+
                         public void testAllFilesPresentInPos() throws Exception {
                             KotlinTestUtils.assertAllTestsPresentByMetadataWithExcluded(this.getClass(), new File("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos"), Pattern.compile("^(.+)\\.kt$"), null, true);
                         }
