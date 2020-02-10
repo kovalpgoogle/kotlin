@@ -158,8 +158,8 @@ class PerformanceProjectsTest : AbstractPerformanceProjectsTest() {
                         stat,
                         "build.gradle.kts",
                         "tasks {",
-                        "crea",
-                        lookupElements = listOf("create"),
+                        "reg",
+                        lookupElements = listOf("register"),
                         note = "tasks-create"
                     )
                 }

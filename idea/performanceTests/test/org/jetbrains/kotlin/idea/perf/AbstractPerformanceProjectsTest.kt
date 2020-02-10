@@ -229,8 +229,8 @@ abstract class AbstractPerformanceProjectsTest : UsefulTestCase() {
 
                     // close all project but last - we're going to return and use it further
                     if (counter < warmUpIterations + iterations - 1) {
-                        closeProject(project)
                         myApplication.setDataProvider(null)
+                        closeProject(project)
                     }
                     counter++
                 }
@@ -351,7 +351,7 @@ abstract class AbstractPerformanceProjectsTest : UsefulTestCase() {
                 val items = it.value?.map { e -> e.lookupString }?.toList() ?: emptyList()
                 try {
                     for (lookupElement in lookupElements) {
-                        assertTrue("'$lookupElement' has to be present in items", items.contains(lookupElement))
+                        assertTrue("'$lookupElement' has to be present in items $items", items.contains(lookupElement))
                     }
                 } finally {
                     it.setUpValue?.let { pair ->
