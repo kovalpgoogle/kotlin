@@ -9,7 +9,6 @@ import com.intellij.ide.hierarchy.LanguageCallHierarchy
 import com.intellij.ide.hierarchy.LanguageMethodHierarchy
 import com.intellij.ide.hierarchy.LanguageTypeHierarchy
 import com.intellij.ide.hierarchy.actions.BrowseHierarchyActionBase
-import com.intellij.ide.hierarchy.call.CallerMethodsTreeStructure
 import com.intellij.ide.hierarchy.type.SubtypesHierarchyTreeStructure
 import com.intellij.ide.hierarchy.type.SupertypesHierarchyTreeStructure
 import com.intellij.ide.hierarchy.type.TypeHierarchyTreeStructure
@@ -22,7 +21,7 @@ import com.intellij.openapi.util.io.FileUtil
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiElement
-import com.intellij.psi.PsiMember
+import com.intellij.psi.PsiMethod
 import com.intellij.refactoring.util.CommonRefactoringUtil.RefactoringErrorHintException
 import com.intellij.rt.execution.junit.ComparisonDetailsExtractor
 import com.intellij.testFramework.LightProjectDescriptor
@@ -31,10 +30,7 @@ import com.intellij.util.ArrayUtil
 import junit.framework.ComparisonFailure
 import junit.framework.TestCase
 import org.jetbrains.kotlin.idea.KotlinHierarchyViewTestBase
-import org.jetbrains.kotlin.idea.hierarchy.calls.HierarchyBrowserBaseEx
-import org.jetbrains.kotlin.idea.hierarchy.calls.HierarchyTreeStructure
-import org.jetbrains.kotlin.idea.hierarchy.calls.KotlinCalleeTreeStructure
-import org.jetbrains.kotlin.idea.hierarchy.calls.KotlinCallerTreeStructure
+import org.jetbrains.kotlin.idea.hierarchy.calls.*
 import org.jetbrains.kotlin.idea.hierarchy.overrides.KotlinOverrideTreeStructure
 import org.jetbrains.kotlin.idea.test.KotlinWithJdkAndRuntimeLightProjectDescriptor
 import org.jetbrains.kotlin.psi.KtCallableDeclaration
@@ -129,9 +125,9 @@ abstract class AbstractHierarchyTest : KotlinHierarchyViewTestBase() {
 
     private val callerJavaHierarchyStructure: Computable<HierarchyTreeStructure>
         get() = Computable {
-            CallerMethodsTreeStructure(
+            createCallerMethodsTreeStructure(
                 project,
-                (getElementAtCaret(LanguageCallHierarchy.INSTANCE) as PsiMember),
+                (getElementAtCaret(LanguageCallHierarchy.INSTANCE) as PsiMethod),
                 HierarchyBrowserBaseEx.SCOPE_PROJECT
             )
         }

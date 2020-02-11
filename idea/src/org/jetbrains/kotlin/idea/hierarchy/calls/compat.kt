@@ -3,7 +3,7 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
 
-@file:Suppress("TYPEALIAS_EXPANSION_DEPRECATION", "DEPRECATION")
+@file:Suppress("TYPEALIAS_EXPANSION_DEPRECATION", "DEPRECATION", "UnstableApiUsage")
 
 package org.jetbrains.kotlin.idea.hierarchy.calls
 
@@ -20,9 +20,9 @@ typealias HierarchyScopeType = String
 typealias HierarchyBrowserBaseEx = com.intellij.ide.hierarchy.HierarchyBrowserBaseEx
 typealias MethodHierarchyBrowserBase = com.intellij.ide.hierarchy.MethodHierarchyBrowserBase
 
-fun getCallerTypeCompat() = CallHierarchyBrowserBase.CALLER_TYPE
-fun getCalleeTypeCompat() = CallHierarchyBrowserBase.CALLEE_TYPE
-fun getMethodTypeCompat() = MethodHierarchyBrowserBase.METHOD_TYPE
+fun getCallerTypeCompat(): String = CallHierarchyBrowserBase.CALLER_TYPE
+fun getCalleeTypeCompat(): String = CallHierarchyBrowserBase.CALLEE_TYPE
+fun getMethodTypeCompat(): String = MethodHierarchyBrowserBase.METHOD_TYPE
 
 fun createCallerMethodsTreeStructure(project: Project, method: PsiMethod, scopeType: String): CallerMethodsTreeStructure {
     return CallerMethodsTreeStructure(project, method, scopeType)
