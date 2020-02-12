@@ -3611,11 +3611,6 @@ public class DiagnosticsTestSpecGenerated extends AbstractDiagnosticsTestSpec {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.3.kt");
                         }
 
-                        @TestMetadata("1.4.kt")
-                        public void test1_4() throws Exception {
-                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.4.kt");
-                        }
-
                         @TestMetadata("1.5.kt")
                         public void test1_5() throws Exception {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.5.kt");
@@ -3639,6 +3634,21 @@ public class DiagnosticsTestSpecGenerated extends AbstractDiagnosticsTestSpec {
                         @TestMetadata("2.2.kt")
                         public void test2_2() throws Exception {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/2.2.kt");
+                        }
+
+                        @TestMetadata("2.3.kt")
+                        public void test2_3() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/2.3.kt");
+                        }
+
+                        @TestMetadata("2.4.kt")
+                        public void test2_4() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/2.4.kt");
+                        }
+
+                        @TestMetadata("3.1.kt")
+                        public void test3_1() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/3.1.kt");
                         }
 
                         @TestMetadata("4.1.kt")

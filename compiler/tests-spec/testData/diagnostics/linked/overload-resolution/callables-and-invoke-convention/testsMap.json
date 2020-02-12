@@ -27,7 +27,7 @@
           "specVersion": "0.1-261",
           "casesNumber": 1,
           "description": "set of non-extension member callables only",
-          "path": "compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.4.kt",
+          "path": "compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/2.3.kt",
           "unexpectedBehaviour": false
         },
         {
