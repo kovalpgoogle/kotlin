@@ -20,19 +20,34 @@ package libPackage
 
 public fun String?.orEmpty(): String = "my Extension for $this"
 
-// FILE: Tests.kt
+// FILE: TestCase1.kt
 
 package sentence3
 
 import libPackage.*
 import libPackage.orEmpty
 
-public fun String?.orEmpty(): String = "my top-level (pack scope) Extension for $this"
+private fun String?.orEmpty(): String = "my top-level (pack scope) Extension for $this"
 
 // TESTCASE NUMBER: 1
 class Case1() {
     fun String?.orEmpty(): String = "my local extension for $this"
     fun case1(s: String?) {
         s.<!DEBUG_INFO_AS_CALL("fqName: sentence3.Case1.orEmpty; typeCall: function; ")!>orEmpty()<!>
+    }
+}
+
+// FILE: TestCase2.kt
+package sentence3
+import libPackage.*
+//import libPackage.orEmpty
+
+private fun String?.orEmpty(): String = "my top-level (pack scope) Extension for $this"
+
+// TESTCASE NUMBER: 1
+class Case2() {
+    fun String?.orEmpty(): String = "my local extension for $this"
+    fun case2(s: String?) {
+        s.<!DEBUG_INFO_AS_CALL("fqName: sentence3.Case2.orEmpty; typeCall: function; ")!>orEmpty()<!>
     }
 }

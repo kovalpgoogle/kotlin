@@ -101,6 +101,35 @@
           "casesNumber": 6,
           "description": "sets of extension callables declared in the package scope",
           "unexpectedBehaviour": false
+        },
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "sets of declared in the package scope and star-imported extension callables",
+          "unexpectedBehaviour": false
+        }
+      ],
+      "5": [
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "set of star-imported extension callables",
+          "unexpectedBehaviour": false
+        },
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "sets of declared in the package scope and star-imported extension callables",
+          "path": "compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/4.2.kt",
+          "unexpectedBehaviour": false
+        }
+      ],
+      "6": [
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "set of implicitly-imported extension callables",
+          "unexpectedBehaviour": false
         }
       ]
     }
@@ -113,6 +142,26 @@
           "casesNumber": 6,
           "description": "sets of extension callables declared in the package scope",
           "path": "compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/4.1.kt",
+          "unexpectedBehaviour": false
+        }
+      ]
+    }
+  },
+  "11": {
+    "pos": {
+      "1": [
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "set of star-imported extension callables",
+          "path": "compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/5.1.kt",
+          "unexpectedBehaviour": false
+        },
+        {
+          "specVersion": "0.1-261",
+          "casesNumber": 1,
+          "description": "set of implicitly-imported extension callables",
+          "path": "compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/6.1.kt",
           "unexpectedBehaviour": false
         }
       ]

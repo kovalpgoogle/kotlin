@@ -3656,6 +3656,21 @@ public class DiagnosticsTestSpecGenerated extends AbstractDiagnosticsTestSpec {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/4.1.kt");
                         }
 
+                        @TestMetadata("4.2.kt")
+                        public void test4_2() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/4.2.kt");
+                        }
+
+                        @TestMetadata("5.1.kt")
+                        public void test5_1() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/5.1.kt");
+                        }
+
+                        @TestMetadata("6.1.kt")
+                        public void test6_1() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/6.1.kt");
+                        }
+
                         public void testAllFilesPresentInPos() throws Exception {
                             KotlinTestUtils.assertAllTestsPresentByMetadataWithExcluded(this.getClass(), new File("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos"), Pattern.compile("^(.+)\\.kt$"), null, true);
                         }
