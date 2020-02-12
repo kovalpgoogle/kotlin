@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Kotlin2JsCompilerArguments">
-    <option name="sourceMapEmbedSources" />
-    <option name="sourceMapPrefix" />
-  </component>
   <component name="Kotlin2JvmCompilerArguments">
     <option name="jvmTarget" value="1.8" />
   </component>
@@ -13,6 +9,6 @@
     </option>
   </component>
   <component name="KotlinCompilerSettings">
-    <option name="additionalArguments" value="-version -Xallow-kotlin-package -Xskip-metadata-version-check -Xread-deserialized-contracts" />
+    <option name="additionalArguments" value="-version -Xallow-kotlin-package -Xskip-metadata-version-check -Xread-deserialized-contracts -Xnew-inference" />
   </component>
 </project>

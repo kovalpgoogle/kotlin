@@ -3621,6 +3621,16 @@ public class DiagnosticsTestSpecGenerated extends AbstractDiagnosticsTestSpec {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.4.kt");
                         }
 
+                        @TestMetadata("1.5.kt")
+                        public void test1_5() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.5.kt");
+                        }
+
+                        @TestMetadata("1.6.kt")
+                        public void test1_6() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.6.kt");
+                        }
+
                         @TestMetadata("2.1.kt")
                         public void test2_1() throws Exception {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/2.1.kt");
