@@ -11,21 +11,22 @@
  * DESCRIPTION: The sets of non-extension member callables named f of type T;
  */
 
+// TESTCASE NUMBER: 1, 2, 3
+
 // FILE: Marker.kt
 package libPackage
 
 class Marker {
     fun foo() = println("non-extension member Marker.foo()")
-    val foo: Marker = this
+    val foo: Marker = <!DEBUG_INFO_LEAKING_THIS!>this<!>
     operator fun invoke() =  println("non-extension member Marker.invoke()")
 }
-
-
-// TESTCASE NUMBER: 1
 
 // FILE: Tests.kt
 package tests
 import libPackage.Marker
+
+// TESTCASE NUMBER: 1
 
 class Case1() {
 

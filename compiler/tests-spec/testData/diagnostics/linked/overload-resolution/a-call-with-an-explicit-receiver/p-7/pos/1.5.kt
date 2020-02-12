@@ -7,6 +7,8 @@
  *
  * SPEC VERSION: 0.1-261
  * PLACE: overload-resolution, a-call-with-an-explicit-receiver -> paragraph 7 -> sentence 1
+ * RELEVANT PLACES: overload-resolution, a-call-with-an-explicit-receiver -> paragraph 7 -> sentence 2
+ * overload-resolution, a-call-with-an-explicit-receiver -> paragraph 11 -> sentence 1
  * NUMBER: 5
  * DESCRIPTION: The sets of non-extension member callables named f of type T;
  */

@@ -7,9 +7,13 @@
  *
  * SPEC VERSION: 0.1-261
  * PLACE: overload-resolution, a-call-with-an-explicit-receiver -> paragraph 7 -> sentence 1
+ * RELEVANT PLACES: overload-resolution, a-call-with-an-explicit-receiver -> paragraph 7 -> sentence 2
+ * overload-resolution, a-call-with-an-explicit-receiver -> paragraph 11 -> sentence 1
  * NUMBER: 6
- * DESCRIPTION: The sets of non-extension member callables named f of type T;
+ * DESCRIPTION: The sets of non-extension member callables, local extension callables excluding the package scope
  */
+
+// TESTCASE NUMBER: 1, 2, 3
 
 // FILE: Marker.kt
 package libPackage
@@ -19,12 +23,11 @@ class Marker {
     val foo: String = "non-extension member Marker.foo"
 }
 
-// TESTCASE NUMBER: 1
-
 // FILE: Tests.kt
 package tests
 import libPackage.Marker
 
+// TESTCASE NUMBER: 1
 class Case1() {
 
     fun Marker.<!EXTENSION_SHADOWED_BY_MEMBER!>foo<!>() = println("local extension marker.foo")

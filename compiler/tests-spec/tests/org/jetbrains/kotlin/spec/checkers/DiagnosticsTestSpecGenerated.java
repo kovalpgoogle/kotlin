@@ -3601,11 +3601,6 @@ public class DiagnosticsTestSpecGenerated extends AbstractDiagnosticsTestSpec {
                             KotlinTestUtils.runTest(this::doTest, this, testDataFilePath);
                         }
 
-                        @TestMetadata("1.1.kt")
-                        public void test1_1() throws Exception {
-                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.1.kt");
-                        }
-
                         @TestMetadata("1.2.kt")
                         public void test1_2() throws Exception {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.2.kt");
@@ -3631,6 +3626,11 @@ public class DiagnosticsTestSpecGenerated extends AbstractDiagnosticsTestSpec {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.6.kt");
                         }
 
+                        @TestMetadata("1.7.kt")
+                        public void test1_7() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/1.7.kt");
+                        }
+
                         @TestMetadata("2.1.kt")
                         public void test2_1() throws Exception {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/2.1.kt");
@@ -3639,6 +3639,11 @@ public class DiagnosticsTestSpecGenerated extends AbstractDiagnosticsTestSpec {
                         @TestMetadata("2.2.kt")
                         public void test2_2() throws Exception {
                             runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/2.2.kt");
+                        }
+
+                        @TestMetadata("4.1.kt")
+                        public void test4_1() throws Exception {
+                            runTest("compiler/tests-spec/testData/diagnostics/linked/overload-resolution/a-call-with-an-explicit-receiver/p-7/pos/4.1.kt");
                         }
 
                         public void testAllFilesPresentInPos() throws Exception {

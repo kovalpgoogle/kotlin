@@ -11,6 +11,9 @@
  * overload-resolution, a-call-with-an-explicit-receiver -> paragraph 3 -> sentence 1
  * overload-resolution, a-call-with-an-explicit-receiver -> paragraph 3 -> sentence 2
  * overload-resolution, a-call-with-an-explicit-receiver -> paragraph 2 -> sentence 1
+ * overload-resolution, callables-and-invoke-convention -> paragraph 6 -> sentence 1
+ * overload-resolution, callables-and-invoke-convention -> paragraph 7 -> sentence 1
+ * overload-resolution, callables-and-invoke-convention -> paragraph 7 -> sentence 2
  * NUMBER: 1
  * DESCRIPTION: The sets of local extension callables
  */
@@ -19,7 +22,7 @@
 class Case1() {
     fun foo() : Int =1
 
-    val foo = object : Marker {}
+    val foo = object : MarkerCase1 {}
 
     fun innerFun() {
         this.<!DEBUG_INFO_AS_CALL("fqName: Case1.foo; typeCall: function; ")!>foo()<!>
@@ -27,18 +30,18 @@ class Case1() {
 
 
     inner class InnerClass0 {
-        val foo = object : Marker {}
-        operator fun Marker.invoke() {}
+        val foo = object : MarkerCase1 {}
+        operator fun MarkerCase1.invoke() {}
 
         fun innerClassFun() {
             this.<!DEBUG_INFO_AS_CALL("fqName: Case1.InnerClass0.invoke; typeCall: variable&invoke; ")!>foo()<!>
         }
     }
 
-    operator fun Marker.invoke() {}
+    operator fun MarkerCase1.invoke() {}
 
     inner class InnerClass1(){
-        val foo = object : Marker {}
+        val foo = object : MarkerCase1 {}
 
         fun nestedClassFun(){
             this.<!DEBUG_INFO_AS_CALL("fqName: Case1.invoke; typeCall: variable&invoke; ")!>foo()<!>
@@ -46,10 +49,10 @@ class Case1() {
     }
 }
 
-interface Marker {}
+interface MarkerCase1 {}
 
 fun case1(){
-    operator fun Marker.invoke() {}
+    operator fun MarkerCase1.invoke() {}
     Case1().InnerClass0().<!DEBUG_INFO_AS_CALL("fqName: case1.invoke; typeCall: variable&invoke; ")!>foo()<!>
     Case1().InnerClass1().<!DEBUG_INFO_AS_CALL("fqName: case1.invoke; typeCall: variable&invoke; ")!>foo()<!>
 }

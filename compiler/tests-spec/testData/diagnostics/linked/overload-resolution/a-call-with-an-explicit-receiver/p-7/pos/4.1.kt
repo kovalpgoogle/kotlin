@@ -6,18 +6,21 @@
  * KOTLIN DIAGNOSTICS SPEC TEST (POSITIVE)
  *
  * SPEC VERSION: 0.1-253
- * PLACE: overload-resolution, a-call-with-an-explicit-receiver -> paragraph 7 -> sentence 1
- * RELEVANT PLACES: overload-resolution, callables-and-invoke-convention -> paragraph 6 -> sentence 1
- * overload-resolution, a-call-with-an-explicit-receiver -> paragraph 3 -> sentence 1
- * overload-resolution, a-call-with-an-explicit-receiver -> paragraph 2 -> sentence 1
+ * PLACE: overload-resolution, a-call-with-an-explicit-receiver -> paragraph 7 -> sentence 4
+ * RELEVANT PLACES: overload-resolution, a-call-with-an-explicit-receiver -> paragraph 8 -> sentence 1
  * NUMBER: 1
- * DESCRIPTION: sets of non-extension member callables only
+ * DESCRIPTION: sets of extension callables declared in the package scope
  */
 
 package tests.diag
 
 // TESTCASE NUMBER: 1, 2
 operator fun Int.invoke() {}
+
+// TESTCASE NUMBER: 3, 4
+interface Marker {
+    operator fun invoke() {}
+}
 
 // TESTCASE NUMBER: 1
 class Case1 {
@@ -37,6 +40,7 @@ class Case2 {
     val foo: Int = 1
     fun foo(): Int = 1
 }
+
 fun case2() {
     Case2().<!DEBUG_INFO_AS_CALL("fqName: tests.diag.Case2.foo; typeCall: function; ")!>foo()<!>
     val a = Case2()
@@ -44,7 +48,6 @@ fun case2() {
     var b = Case2()
     b.<!DEBUG_INFO_AS_CALL("fqName: tests.diag.Case2.foo; typeCall: function; ")!>foo()<!>
 }
-
 
 // TESTCASE NUMBER: 3
 class Case3() {
@@ -63,6 +66,7 @@ fun case3() {
     var b = Case3()
     b.<!DEBUG_INFO_AS_CALL("fqName: tests.diag.Case3.foo; typeCall: function; ")!>foo()<!>
 }
+
 // TESTCASE NUMBER: 4
 class Case4() {
     val foo = object : Marker {}
@@ -80,9 +84,6 @@ fun case4() {
     b.<!DEBUG_INFO_AS_CALL("fqName: tests.diag.Marker.invoke; typeCall: variable&invoke; ")!>foo()<!>
 }
 
-interface Marker {
-    operator fun invoke() {}
-}
 
 // TESTCASE NUMBER: 5
 class Case5() {

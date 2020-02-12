@@ -15,6 +15,10 @@
  */
 
 // TESTCASE NUMBER: 1
+interface Marker {
+    operator fun invoke() {}
+}
+
 class Case1() {
     fun foo() : Int =1
 
@@ -24,8 +28,6 @@ class Case1() {
         <!DEBUG_INFO_AS_CALL("fqName: Case1.foo; typeCall: function; ")!>foo()<!>
         this.<!DEBUG_INFO_AS_CALL("fqName: Case1.foo; typeCall: function; ")!>foo()<!>
     }
-
-    operator fun Int.invoke() {}
 
     inner class InnerClass0 {
         val foo = object : Marker {}
@@ -47,6 +49,3 @@ class Case1() {
     }
 }
 
-interface Marker {
-    operator fun invoke() {}
-}

@@ -16,7 +16,7 @@
 
 package tests.test2
 
-// TESTCASE NUMBER: 6
+// TESTCASE NUMBER: 1
 open class Case1() {
     companion object foo {
         operator fun invoke() {}
@@ -47,12 +47,16 @@ open class Case1() {
         fun innerClassFun() {
             <!DEBUG_INFO_AS_CALL("fqName: tests.test2.Case1.foo.invoke; typeCall: variable&invoke; ")!>foo()<!>
             Case1.<!DEBUG_INFO_AS_CALL("fqName: tests.test2.Case1.foo.invoke; typeCall: variable&invoke; ")!>foo()<!>
+
             <!DEBUG_INFO_AS_CALL("fqName: tests.test2.Case1.invoke; typeCall: variable&invoke; ")!>propVal()<!>
             this@Case1.<!DEBUG_INFO_AS_CALL("fqName: tests.test2.Case1.invoke; typeCall: variable&invoke; ")!>propVal()<!>
+
             <!DEBUG_INFO_AS_CALL("fqName: tests.test2.Case1.invoke; typeCall: variable&invoke; ")!>propVar()<!>
             this@Case1.<!DEBUG_INFO_AS_CALL("fqName: tests.test2.Case1.invoke; typeCall: variable&invoke; ")!>propVar()<!>
+
             <!DEBUG_INFO_AS_CALL("fqName: tests.test2.Case1.function; typeCall: function; ")!>function()<!>
             this@Case1.<!DEBUG_INFO_AS_CALL("fqName: tests.test2.Case1.function; typeCall: function; ")!>function()<!>
+
             <!DEBUG_INFO_AS_CALL("fqName: tests.test2.Marker.invoke; typeCall: variable&invoke; ")!>markerObj()<!>
             this@Case1.<!DEBUG_INFO_AS_CALL("fqName: tests.test2.Marker.invoke; typeCall: variable&invoke; ")!>markerObj()<!>
         }
